@@ -10,7 +10,7 @@ on:
     - cron:  '0 0 1 * *'
 
 jobs:
-  ubuntu_lts:
+  build_mssql_2022:
     name: Build and push MSSQL 2022-latest image
     runs-on: ubuntu-latest
     steps:
@@ -38,6 +38,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
+            ${{ vars.DOCKER_REGISTRY }}/${{ vars.DOCKER_IMAGE }}:2022-latest
             ${{ vars.DOCKER_REGISTRY }}/${{ vars.DOCKER_IMAGE }}:latest
           platforms: |
             linux/amd64
