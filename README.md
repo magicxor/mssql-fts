@@ -1,2 +1,2 @@
 # mssql-fts
-MSSQL with Full-Text Search
+Microsoft SQL Server with Full-Text Search
