@@ -11,7 +11,7 @@ on:
 
 jobs:
   ubuntu_lts:
-    name: Ubuntu LTS
+    name: Build and push MSSQL 2022-latest image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,10 +34,10 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ubuntu-lts/.
-          no-cache: true
+          context: 2022-latest/.
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ${{ vars.DOCKER_REGISTRY }}/${{ vars.DOCKER_IMAGE }}:latest
           platforms: |
             linux/amd64
-
