@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mssql/server:2022-latest
+FROM mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04
 
 # Switch to root to install fulltext - apt-get won't work unless you switch users!
 USER root
